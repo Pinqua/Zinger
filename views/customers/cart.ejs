@@ -1,0 +1,107 @@
+<% if(session?.cart?.totalQty){ %>
+
+    <div class="cart min-h-screen w-full px-32 py-12">
+        <div class="flex items-center mt-32">
+            <img class="object-contain w-6 mr-2" src="/img/icons/shopping-cart-order.svg" alt="" />
+            <h2 class="text-2xl">Shopping Cart</h2>
+        </div>
+        <div class="my-10 space-y-5">
+            <% for(let cart_item of Object.values(session.cart.items_with_quantity)) { %>
+                <div class="cart__item flex items-center  rounded-xl justify-between shadow"
+                    id="cart-item-<%= cart_item.item._id %>">
+                    <div class="w-1/4">
+                        <span class="capitalize">
+                            <%= cart_item.item.name %>
+                        </span>
+                    </div>
+                    <div class="font-medium flex items-center space-x-4">
+                        <button data-cart_item="<%= JSON.stringify(cart_item.item) %>"
+                            class="rounded-full cart__item__increment hover:shadow-xl focus:outline-none text-2xl w-6 h-6 flex items-center justify-center">
+                            +
+                        </button>
+                        <span id="cart-item-qty-<%= cart_item.item._id %>">
+                            <%= cart_item.quantity %>
+                        </span>
+                        <button data-cart_item="<%= JSON.stringify(cart_item.item) %>""
+                            class=" rounded-full cart__item__decrement hover:shadow-xl focus:outline-none text-2xl w-6
+                            h-6 flex items-center justify-center">
+                            -
+                        </button>
+                    </div>
+                    <div class="font-medium text-2xl cart__item__price">$ <%= cart_item.item.price %>
+                    </div>
+                    <div>
+                        <button class="focus:outline-none cart__item__remove"
+                            data-cart_item="<%= JSON.stringify(cart_item.item) %>">
+                            <img class="w-5 object-contain" src="/img/icons/delete.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+
+        <div class="cart__total max-w-sm p-6 rounded-xl ml-auto">
+            <div class="space-y-4">
+                <div class="flex item-center justify-between">
+                    <span>Subtotal</span>
+                    <span id="cart__subTotal">$ <%= session.cart.totalPrice %></span>
+                </div>
+                <div class="flex item-center justify-between">
+                    <span>Tax</span>
+                    <span>$ <%= session.cart.tax %></span>
+                </div>
+                <div class="flex item-center justify-between">
+                    <span class="font-semibold text-xl">Total Amount</span>
+                    <span id="cart__totalPrice" class="font-bold cart__total__price text-2xl">$ <%=
+                            session.cart.totalPrice+session.cart.tax %>
+                    </span>
+                </div>
+            </div>
+            <% if(user) { %>
+                <div>
+                    <form action="/order" method="POST" class="mt-12" id="payment-form">
+                        <div class="relative w-full mb-4">
+                            <select id="paymentType" name="paymentType"
+                                class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                                <option value="cod">Cash on delivery</option>
+                                <option value="card">Pay with card</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <input name="phone" class="border border-gray-400 p-2 w-full mb-4" type="tel" required
+                            placeholder="Phone number">
+                        <input name="address" class="border border-gray-400 p-2 w-full" type="text" required
+                            placeholder="Address">
+                        <div class="mt-4">
+                            <div id="card-element"></div>
+                            <div class="w-full mt-8">
+                                <button type="submit" class="btn block w-full hover:shadow-xl focus:outline-none">Order
+                                    Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <% } else { %>
+                    <a href="/login" class="mt-8 btn block w-full hover:shadow-xl focus:outline-none">Login
+                        to continue</a>
+                    <% } %>
+
+        </div>
+    </div>
+    <% }else{ %>
+
+        <div class="flex items-center justify-center heightFix w-full">
+            <div class="text-center">
+                <img class="object-contain max-w-sm mx-auto" src="/img/empty_cart.svg" alt="">
+                <h3 class="text-3xl mt-8">Your Cart is Empty</h3>
+            </div>
+        </div>
+
+        <% } %>

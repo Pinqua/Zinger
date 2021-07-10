@@ -1,0 +1,25 @@
+<div class="flex items-center justify-center h-screen w-full">
+    <div class="flex-col form p-12 rounded-xl mt-16 relative shadow">
+        <h2 class="font-bold text-4xl mb-8">Reset Password</h2>
+        <form action="/reset/<%= token ? token:'' %>" method="POST">
+            <% if(messages.error){ %>
+                <span class="error text-sm">
+                    <%= messages.error %>
+                </span>
+                <% } %>
+                    <% if(messages.success){ %>
+                        <span class="success text-sm">
+                            <%= messages.success %>
+                        </span>
+                        <% } %>
+                            <input class="w-full py-2.5 px-3 mt-6 rounded-md focus:shadow-xl hover:shadow-xl"
+                                type="password" name="password" placeholder="Enter password" id="register__password"
+                                required />
+                            <input class="w-full py-2.5 px-3 mt-6 rounded-md focus:shadow-xl hover:shadow-xl"
+                                type="password" placeholder="Re enter password" id="register__re_password" required />
+                            <button type="submit" class="btn w-full mt-10 hover:shadow-xl">Submit</button>
+        </form>
+        <img class="object-contain absolute -top-16 -left-16 w-60" src="/img/circles/Ellipse 1.svg" alt="">
+        <img class="object-contain absolute -bottom-10 -right-10 w-32" src="/img/circles/Ellipse 2.svg" alt="">
+    </div>
+</div>

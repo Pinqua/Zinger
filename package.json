@@ -8,8 +8,34 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.1",
+    "@reduxjs/toolkit": "^1.6.0",
+    "@stripe/stripe-js": "^1.15.1",
+    "@tailwindcss/line-clamp": "^0.2.1",
+    "axios": "^0.21.1",
+    "fuse.js": "^6.4.6",
+    "micro": "^9.3.4",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.9",
     "next": "11.0.1",
+    "next-auth": "^3.27.2",
+    "next-pwa": "^5.2.23",
+    "nprogress": "^0.2.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-currency-formatter": "^1.1.0",
+    "react-dom": "17.0.2",
+    "react-loader-spinner": "^4.0.0",
+    "react-loading-skeleton": "^2.2.0",
+    "react-onclickoutside": "^6.11.2",
+    "react-redux": "^7.2.4",
+    "react-reveal": "^1.2.2",
+    "react-toastify": "^7.0.4",
+    "stripe": "^8.160.0",
+    "swr": "^0.5.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
   }
 }

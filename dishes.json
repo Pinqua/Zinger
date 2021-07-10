@@ -1,0 +1,210 @@
+[
+{
+    "title":"Chicken Crispy",
+    "price":150,
+    "description":"Chicken chunks, deep-fried and tossed in a fiery red marinade of garlic, red chilli, soy. A must-try starter!",
+    "category":"chicken",
+    "image":"/img/dishes/chicken_crispy.jpg"
+}
+,
+{
+    "title":"Chicken Dragon",
+    "price":185,
+    "description":"A hearty starter with deep-fried chicken chunks coated in a flavour-packed sauce with a strong flavor of garlic.",
+    "category":"chicken",
+    "image":"/img/dishes/chicken_dragon.jpg"
+},
+{
+    "title":"Chicken Sangrila",
+    "price":185,
+    "description":"A flavor-packed dish with succulent chicken chunks coated in seasoned batter, deep-fried, and tossed in a spicy and thick Manchurian sauce.",
+    "category":"chicken",
+    "image":"/img/dishes/chicken_sangrila.jpg"
+},
+{
+    "title":"Chicken Lollipop",
+    "price":150,
+    "description":"Juicy chicken wings covered in a fiery red marinade of garlic, red chilli, soy and deep-fried.",
+    "category":"chicken",
+    "image":"/img/dishes/chicken_lollipop.jpg"
+},
+{
+    "title":"Chicken Mongolian",
+    "price":180,
+    "description":"A deliciously spicy dish with juicy chicken chunks coated in seasoned batter, deep fried, and tossed in a hot and spicy sauce.",
+    "category":"chicken",
+    "image":"/img/dishes/chicken_mongolian.jpg"
+},
+{
+    "title":"Tomato Soup",
+    "price":70,
+    "description":"A deliciously creamy and tangy soup made from fresh, ripe tomatoes.",
+    "category":"soup",
+    "image":"/img/dishes/tomato_soup.jpg"
+}
+,
+{
+    "title":"Veg Manchow Soup",
+    "price":70,
+    "description":"A slightly spicy and thick soup simmered in hot and spicy and topped with fried noodles.",
+    "category":"soup",
+    "image":"/img/dishes/veg_manchow_soup.jpg"
+}
+,
+{
+    "title":"Veg Hot and Sour Soup",
+    "price":80,
+    "description":"A delectable hot and sour soup packed with the goodness of vegetables.",
+    "category":"soup",
+    "image":"/img/dishes/veg_hot_and_sour_soup.jpg"
+}
+,
+{
+    "title":"Veg Clear Soup",
+    "price":50,
+    "description":"A flavour packed soup prepared from vegetables simmered in a seasoned vegetable stock.",
+    "category":"soup",
+    "image":"/img/dishes/veg_clear_soup.jpg"
+}
+,
+{
+    "title":"Chicken Clear Soup",
+    "price":70,
+    "description":"A flavour packed soup prepared by simmering chicken slivers in a seasoned stock.",
+    "category":"soup",
+    "image":"/img/dishes/chicken_clear_soup.jpg"
+}
+,
+{
+    "title":"Chicken Manchow Soup",
+    "price":80,
+    "description":"A slightly spicy and thick soup simmered in hot and spicy flavors with chicken chunks, topped with fried noodles.",
+    "category":"soup",
+    "image":"/img/dishes/chicken_manchow_soup.jpg"
+}
+,
+{
+    "title":"Chicken Hot and Sour Soup",
+    "price":80,
+    "description":"A delectable yet tangy flavoured soup packed with chicken chunks - served with fried noodles.",
+    "category":"soup",
+    "image":"/img/dishes/chicken_hot_and_sour_soup.jpg"
+},
+{
+    "title":"Butterscotch Cake [500 grams]",
+    "price":300,
+    "description":"Vanilla base layered with caramel blended vanilla cream and loaded with crunchy butter scotch nuts. Eggless cake",
+    "category":"cake",
+    "image":"/img/dishes/butterscotch_cake.jpg"
+},
+{
+    "title":"Choco Truffle Cake [500 grams]",
+    "price":320,
+    "description":"Chocolate sponge layered with a delightful combination of chocolate truffle and chocolate cream. Eggless cake",
+    "category":"cake",
+    "image":"/img/dishes/choco_truffle_cake.jpg"
+}
+,
+{
+    "title":"Blueberry Cake [500 grams]",
+    "price":290,
+    "description":"Delicious cake with sweet blueberry compote, served cold.",
+    "category":"cake",
+    "image":"/img/dishes/blueberry_cake.jpg"
+}
+,
+{
+    "title":"Pineapple Cake [500 grams]",
+    "price":290,
+    "description":"Vanilla sponge, vanilla cream, loaded with juicy pineapple cubes and added pineapple crush to enhance flavour. Eggless cake",
+    "category":"cake",
+    "image":"/img/dishes/pineapple_cake.jpg"
+}
+,
+{
+    "title":"Chicken Dominator",
+    "price":319,
+    "description":"Loaded with double pepper barbecue chicken, peri-peri chicken, chicken tikka & grilled chicken rashers",
+    "category":"pizza",
+    "image":"/img/dishes/chicken_dominator.jpg"
+}
+,
+{
+    "title":"Non Veg Supreme",
+    "price":319,
+    "description":"Supreme combination of black olives, onion, capsicum, grilled mushroom, pepper barbecue chicken, peri-peri chicken & grilled chicken rashers",
+    "category":"pizza",
+    "image":"/img/dishes/non_veg_supremer.jpg"
+}
+,
+{
+    "title":"Indi Tandoori Paneer",
+    "price":249,
+    "description":"It is hot. It is spicy. It is oh-so-Indian. Tandoori paneer with capsicum, red paprika & mint mayo",
+    "category":"pizza",
+    "image":"/img/dishes/indi_tandoori_paneer.jpg"
+}
+,
+{
+    "title":"Deluxe Veggie",
+    "price":249,
+    "description":"Veg delight - onion, capsicum, grilled mushroom, corn & paneer",
+    "category":"pizza",
+    "image":"/img/dishes/deluxe_veggie.jpg"
+}
+,
+{
+    "title":"Chicken Golden Delight",
+    "price":249,
+    "description":"Double pepper barbecue chicken, golden corn and extra cheese, true delight",
+    "category":"pizza",
+    "image":"/img/dishes/chicken_golden_delight.jpg"
+}
+,
+{
+    "title":"Movie Marathons Specials (Non Veg)",
+    "price":335,
+    "description":"Reg Pepper BBQ Chicken Pizza + Garlic Bread + Pepsi",
+    "category":"pizza",
+    "image":"/img/dishes/movie_marathons_specials.jpg"
+}
+,
+{
+    "title":"Kiwi Juice",
+    "price":60,
+    "description":"Made from the exotic kiwi fruit.",
+    "category":"juice",
+    "image":"/img/dishes/kiwi_juice.jpg"
+},
+{
+    "title":"Mix Fruit Juice",
+    "price":50,
+    "description":"A classy mixture of all the fresh fruits together.",
+    "category":"juice",
+    "image":"/img/dishes/mix_fruit_juice.jpg"
+}
+,
+{
+    "title":"Anaar Juice",
+    "price":50,
+    "description":"Best in class Anaar juice made with real fruits and nothing else.",
+    "category":"juice",
+    "image":"/img/dishes/anaar_juice.jpg"
+},
+
+{
+    "title":"Mosambi Juice",
+    "price":35,
+    "description":"Refreshing Mosambui Juice",
+    "category":"juice",
+    "image":"/img/dishes/mosambi_juice.jpg"
+},
+
+{
+    "title":"Coconut juice",
+    "price":35,
+    "description":"From the trees of coconut, this natural juice will make your day!",
+    "category":"juice",
+    "image":"/img/dishes/coconut_juice.jpg"
+}
+]

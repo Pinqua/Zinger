@@ -1,0 +1,129 @@
+/* ./styles/globals.css */
+
+/* Tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+/* Custom tailwind class */
+@layer components {
+  .link {
+    @apply cursor-pointer  hover:text-primary-light active:text-primary-light;
+  }
+  .button {
+    @apply cursor-pointer rounded text-center p-2 text-sm   text-white  bg-gradient-to-b from-primary-light to-primary-dark border border-primary-light  focus:outline-none focus:ring-2 focus:ring-primary-dark active:from-primary-dark;
+  }
+  .button-ghost{
+    @apply cursor-pointer rounded text-center p-2 text-sm text-primary-light focus:outline-none border-2 border-primary-light hover:shadow-md focus:shadow-md active:shadow-md;
+  }
+  .button-red {
+    @apply cursor-pointer rounded text-center p-2 text-sm  text-white  bg-gradient-to-b from-red-500 to-red-800 border-red-500  focus:outline-none focus:ring-2 focus:ring-red-500 active:from-red-800;
+  }
+  .dropDownOption {
+    @apply w-full cursor-pointer hover:bg-gray-100 py-2 px-3;
+  }
+  .dashboard-link {
+    @apply link rounded border px-4 py-1 hover:bg-primary-light hover:text-white transition-all duration-200 text-sm;
+  }
+  .heading{
+    @apply lg:text-4xl text-center font-medium sm:text-3xl text-2xl ;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+.heading::after {
+    display: block;
+    height: 2px;
+    background-color: #ab3c2a;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1f2937;
+  scroll-behavior: smooth;
+}
+.main_heading{
+  min-width: 400px;
+}
+
+.heightFix,
+.heightFixAdmin {
+  min-height: calc(100vh - 150px);
+  height: 100%;
+}
+
+.loader svg {
+  width: 150px;
+  height: 150px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hideScrollBar::-webkit-scrollbar {
+  display: none;
+}
+.table_col_img {
+  min-width: 40px;
+}
+
+.table_col {
+  min-width: 120px;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollBar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.glassmorphism {
+  background-color: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.layout {
+  min-width: 320px;
+}
+.sideBarMenu {
+  min-width: 250px;
+}
+
+.layout .Toastify__progress-bar--default {
+  background: #ab3c2a;
+  background: linear-gradient(#ab3c2a, #792a1e) !important;
+}
+
+@media only screen and (max-width: 780px) {
+  .loader svg {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .heightFix {
+    min-height: calc(100vh - 200px);
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+.main_heading{
+  min-width:auto;
+}
+}
+

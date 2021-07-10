@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Zinger</title>
+</head>
+
+<body>
+    <div id="loader" class="z-50 fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+        <img class="object-contain max-w-xs" src="/img/loader/loader-9.gif" alt="">
+    </div>
+    <nav class="flex items-center justify-between py-4 px-32 z-40 fixed top-0 left-0 right-0 w-full bg-white">
+        <div>
+            <a href="/">
+                <img src="/img/logo/Zinger.svg" alt="" />
+            </a>
+        </div>
+        <div class="flex items-center">
+            <div>
+                <ul class="flex items-center space-x-12">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#menu">Menu</a>
+                    </li>
+                    <% if(!user){ %>
+                        <li>
+                            <a href="/login">Login</a>
+                        </li>
+                        <% }else{ %>
+                            <li>
+                                <a href="/orders">Orders</a>
+                            </li>
+                            <% } %>
+                                <li>
+                                    <a href="/contact">Contact</a>
+                                </li>
+                </ul>
+            </div>
+            <div class="mx-12 relative">
+                <form action="/search" method="GET">
+                    <input class="w-80 py-2 px-2.5 pl-12 rounded-md focus:shadow-xl hover:shadow-xl" type="search"
+                        name="query" id="search" placeholder="Search dish" />
+                </form>
+                <div class="absolute left-3 top-0 bottom-0 flex items-center justify-center">
+                    <img class="object-contain w-6" id="search__icon" src="/img/icons/search.svg" alt="search-icon" />
+                </div>
+            </div>
+            <a class="flex items-center py-1.5 px-4 rounded-full hover:shadow-xl" id="nav__cart" href="/cart">
+                <img class="object-contain" src="/img/icons/shopping-cart.svg" alt="shopping-cart-icon" />
+                <span class="px-2" id="cartCounter">
+                    <%= session.cart ? session.cart.totalQty : 0 %>
+                </span>
+            </a>
+        </div>
+    </nav>
+    <%- body %>
+        <div id="footer" class="flex items-center justify-between py-6 px-32">
+            <div class="flex items-center space-x-6">
+                <a href="/">Home</a>
+                <a href="/#about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a class="flex items-center" href="#"><img class="w-5 object-contain mr-2"
+                        src="/img/social/footer/facebook.svg" alt="" />Facebook</a>
+                <a class="flex items-center" href="#"><img class="w-5 object-contain mr-2"
+                        src="/img/social/footer/instagram.svg" alt="" />Instagram</a>
+                <a class="flex items-center" href="#"><img class="w-5 object-contain mr-2"
+                        src="/img/social/footer/twitter.svg" alt="" />Twitter</a>
+                <a class="flex items-center" href="#"><img class="w-5 object-contain mr-2"
+                        src="/img/social/footer/envelope-solid.svg" alt="" />Gmail</a>
+            </div>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/app.js"></script>
+</body>
+
+</html>
