@@ -21,21 +21,24 @@ function Cart() {
 
   const createCheckoutSession = async () => {
     setDisabled(true);
-    const stripe = await stripePromise;
-    //call the backend to create a checkout session
-    const checkoutSession = await axios.post("/api/create-checkout-session", {
-      items: items,
-      email: session.user.email,
-    });
-
-    //Redirect user/customer to Stripe Checkout
-    const result = await stripe.redirectToCheckout({
-      sessionId: checkoutSession.data.id,
-    });
-
-    if (result.error) {
-      alert(result.error.message);
-      console.error(result.error.message);
+    try {
+      const stripe = await stripePromise;
+      //call the backend to create a checkout session
+      const checkoutSession = await axios.post("/api/create-checkout-session", {
+        items: items,
+        email: session.user.email,
+      });
+      //Redirect user/customer to Stripe Checkout
+      const result = await stripe.redirectToCheckout({
+        sessionId: checkoutSession.data.id,
+      });
+      if (result.error) {
+        alert(result.error.message);
+        console.error(result.error.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert(err);
     }
     setDisabled(false);
   };
@@ -61,8 +64,10 @@ function Cart() {
                     </span>
                   </span>
                   <button
-                    className="button-red py-2 px-8 xs:px-10"
+                    className={`button-red py-2 px-8 xs:px-10 ${disabled ? "opacity-50" : ""
+                      }`}
                     onClick={() => dispatch(emptyCart())}
+                    disabled={disabled}
                   >
                     Empty Cart
                   </button>
@@ -78,6 +83,7 @@ function Cart() {
                     image={item?.image}
                     qty={item?.qty}
                     border={i !== items?.length - 1}
+                    disabled={disabled}
                   />
                 ))}
               </div>

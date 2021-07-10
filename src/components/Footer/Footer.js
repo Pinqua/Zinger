@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { HeartIcon } from "@heroicons/react/solid";
 
 function Footer({ admin }) {
   const router = useRouter();
@@ -69,8 +70,8 @@ function Footer({ admin }) {
             </div>
           </div>
         </div>
-        <p className="mt-6 text-gray-200 text-center">
-          Made with &nbsp;💗 🔥&nbsp; by
+        <p className="mt-6 text-gray-200 text-center flex items-center flex-wrap justify-center">
+          Made with <HeartIcon className="w-5 mx-2 text-red-500" /> by
           <span className="text-white hover:underline ml-2">
             <Link href="https://itspiyushsati.netlify.app">Piyush Sati</Link>
           </span>

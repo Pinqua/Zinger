@@ -15,6 +15,7 @@ function UpdateDish(props) {
   const [category, setCategory] = useState(props?.dish?.category);
   const router = useRouter();
   const { categories, error } = getCategories(props?.categories);
+  const [disabled, setDisabled] = useState(false);
 
   if (error) {
     console.error(error);
@@ -22,6 +23,7 @@ function UpdateDish(props) {
 
   const formHandler = (e) => {
     e.preventDefault();
+    setDisabled(true);
     axios
       .post("/api/admin/update-dish", {
         _id: router.query.id,
@@ -33,10 +35,12 @@ function UpdateDish(props) {
       })
       .then((res) => {
         NormalToast("Updated successfully");
+        setDisabled(false);
       })
       .catch((err) => {
         NormalToast("Something went wrong", err);
         console.error(err);
+        setDisabled(false);
       });
   };
 
@@ -58,11 +62,13 @@ function UpdateDish(props) {
               placeholder="Title"
               className="bg-gray-100 border border-gray-200 py-2 px-4 rounded-md outline-none"
               onChange={(e) => setTitle(e.target.value)}
+              disabled={disabled}
             />
             <select
               required
               className="bg-gray-100 border border-gray-200 py-2 px-4 rounded-md outline-none capitalize"
               onChange={(e) => setCategory(e.target.value)}
+              disabled={disabled}
             >
               {categories?.map((category) => (
                 <option value={category?.name} key={`option-${category?._id}`}>
@@ -78,6 +84,7 @@ function UpdateDish(props) {
               onChange={(e) => setDescription(e.target.value)}
               cols="25"
               rows="10"
+              disabled={disabled}
             ></textarea>
             <input
               type="number"
@@ -86,6 +93,7 @@ function UpdateDish(props) {
               className="bg-gray-100 py-2 border border-gray-200 px-4 rounded-md outline-none"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              disabled={disabled}
             />
             <input
               type="text"
@@ -94,10 +102,13 @@ function UpdateDish(props) {
               className="bg-gray-100 py-2 px-4 border border-gray-200 rounded-md outline-none"
               value={image}
               onChange={(e) => setImage(e.target.value)}
+              disabled={disabled}
             />
             <button
               type="submit"
-              className="button py-2 px-10 sm:text-base text-sm mt-4"
+              className={`button py-2 px-10 sm:text-base text-sm mt-4 ${disabled ? "opacity-50" : ""
+                }`}
+              disabled={disabled}
             >
               Submit
             </button>

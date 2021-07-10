@@ -12,6 +12,7 @@ function AddDish(props) {
   const [image, setImage] = useState("");
   const [category, setCategory] = useState(props?.categories[0]?.name);
   const { categories, error } = getCategories(props?.categories);
+  const [disabled, setDisabled] = useState(false);
 
   if (error) {
     console.error(error);
@@ -19,6 +20,7 @@ function AddDish(props) {
 
   const formHandler = (e) => {
     e.preventDefault();
+    setDisabled(true);
     axios
       .post("/api/admin/add-dish", {
         title,
@@ -34,10 +36,12 @@ function AddDish(props) {
         setPrice("");
         setImage("");
         setCategory("");
+        setDisabled(false);
       })
       .catch((err) => {
         NormalToast("Something went wrong", true);
         console.error(err);
+        setDisabled(false);
       });
   };
 
@@ -59,11 +63,13 @@ function AddDish(props) {
               placeholder="Title"
               className="bg-gray-100 py-2 px-4 rounded-md outline-none border border-gray-200"
               onChange={(e) => setTitle(e.target.value)}
+              disabled={disabled}
             />
             <select
               required
               className="bg-gray-100 py-2 px-4 rounded-md outline-none border border-gray-200 capitalize"
               onChange={(e) => setCategory(e.target.value)}
+              disabled={disabled}
             >
               {categories?.map((category) => (
                 <option value={category?.name} key={`option-${category?._id}`}>
@@ -79,6 +85,7 @@ function AddDish(props) {
               onChange={(e) => setDescription(e.target.value)}
               cols="25"
               rows="10"
+              disabled={disabled}
             ></textarea>
             <input
               type="number"
@@ -87,6 +94,7 @@ function AddDish(props) {
               className="bg-gray-100 border py-2 px-4 rounded-md outline-none border-gray-200"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              disabled={disabled}
             />
             <input
               type="text"
@@ -95,10 +103,13 @@ function AddDish(props) {
               className="bg-gray-100 py-2 px-4 border rounded-md outline-none border-gray-200"
               value={image}
               onChange={(e) => setImage(e.target.value)}
+              disabled={disabled}
             />
             <button
               type="submit"
-              className="button py-2 px-10 sm:text-base text-sm mt-4"
+              className={`button py-2 px-10 sm:text-base text-sm mt-4 ${disabled ? "opacity-50" : ""
+                }`}
+              disabled={disabled}
             >
               Submit
             </button>

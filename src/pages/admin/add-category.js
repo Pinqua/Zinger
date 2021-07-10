@@ -5,18 +5,22 @@ import Head from "next/head";
 
 function AddCategory() {
   const [categoryName, setCategoryName] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   const formHandler = (e) => {
+    setDisabled(true);
     e.preventDefault();
     axios
       .post("/api/admin/add-category", { name: categoryName })
       .then(() => {
         NormalToast("Category added successfully");
         setCategoryName("");
+        setDisabled(false);
       })
       .catch((err) => {
         console.error(err);
         NormalToast("Something went wrong", true);
+        setDisabled(false);
       });
   };
 
@@ -37,10 +41,13 @@ function AddCategory() {
               className="bg-gray-100 py-2 border border-gray-200  px-4 rounded-md outline-none"
               value={categoryName}
               onChange={(e) => setCategoryName(e.target.value)}
+              disabled={disabled}
             />
             <button
-              className="button pt-2 px-10 sm:text-base text-sm"
+              className={`button pt-2 px-10 sm:text-base text-sm ${disabled ? "opacity-50" : ""
+                }`}
               type="submit"
+              disabled={disabled}
             >
               Submit
             </button>

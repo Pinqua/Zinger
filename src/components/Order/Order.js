@@ -8,32 +8,35 @@ import NormalToast from "../../util/Toast/NormalToast";
 
 function Order({ _id, id, amount_total, timestamp, items, status, admin }) {
   const [session, loading] = useSession();
-  const [updating, setUpdating] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const updateStatus = (e) => {
-    setUpdating(true);
+    setDisabled(true);
     axios
       .post("/api/admin/update-order-status", {
         status: e.target.value,
         _id: _id,
       })
       .then(() => {
-        setUpdating(false);
+        setDisabled(false);
       })
       .catch((err) => {
         console.error(err);
-        setUpdating(false);
+        setDisabled(false);
       });
   };
   const cancelOrder = () => {
+    setDisabled(true);
     axios
       .post("/api/cancel-order", { status: "cancelled", _id: _id })
       .then(() => {
         NormalToast("Order cancelled");
+        setDisabled(false);
       })
       .catch((err) => {
         console.error(err);
         NormalToast("Something went wrong", true);
+        setDisabled(false);
       });
   };
 
@@ -43,9 +46,9 @@ function Order({ _id, id, amount_total, timestamp, items, status, admin }) {
         {admin ? (
           status && !loading && session && session?.admin ? (
             <select
-              className="border border-b-0 xs:text-sm text-xs p-2 rounded-t-md bg-blue-500 text-white outline-none capitalize"
+              className="shadow leading-tight focus:outline-none focus:shadow-outline border xs:text-sm text-xs p-2  bg-blue-500 text-white capitalize border-b-0 rounded-t-md"
               value={status}
-              disabled={updating}
+              disabled={disabled}
               onChange={updateStatus}
             >
               <option value="shipping soon">Shipping soon</option>
@@ -71,12 +74,14 @@ function Order({ _id, id, amount_total, timestamp, items, status, admin }) {
           <></>
         )}
         {status && status !== "cancelled" && status !== "delivered" ? (
-          <div
-            className="button-red border border-b-0 xs:text-sm text-xs px-4 py-2 rounded-t-md rounded-b-none  inline-block  capitalize"
+          <button
+            className={`button-red border border-b-0 xs:text-sm text-xs px-4 py-2 rounded-t-md rounded-b-none  inline-block  capitalize ${disabled ? "opacity-50" : ""
+              }`}
             onClick={cancelOrder}
+            disabled={disabled}
           >
             Cancel order
-          </div>
+          </button>
         ) : (
           <></>
         )}

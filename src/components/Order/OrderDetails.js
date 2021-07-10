@@ -6,10 +6,11 @@ import Skeleton from "react-loading-skeleton";
 import OrderItem from "../../components/Order/OrderItem";
 import { useSession } from "next-auth/client";
 import axios from "axios";
+import NormalToast from "../../util/Toast/NormalToast";
 
 function OrderDetails({ id, admin }) {
   const [session, loading] = useSession();
-  const [updating, setUpdating] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const { data: order, error } = useSWR(
     !loading && session ? `/api/order-details/${id}` : null
   );
@@ -19,18 +20,33 @@ function OrderDetails({ id, admin }) {
   }
 
   const updateStatus = (e) => {
-    setUpdating(true);
+    setDisabled(true);
     axios
       .post("/api/admin/update-order-status", {
         status: e.target.value,
         _id: id,
       })
       .then(() => {
-        setUpdating(false);
+        setDisabled(false);
       })
       .catch((err) => {
-        setUpdating(false);
+        setDisabled(false);
         console.error(err);
+      });
+  };
+
+  const cancelOrder = () => {
+    setDisabled(true);
+    axios
+      .post("/api/cancel-order", { status: "cancelled", _id: id })
+      .then(() => {
+        NormalToast("Order cancelled");
+        setDisabled(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        NormalToast("Something went wrong", true);
+        setDisabled(false);
       });
   };
 
@@ -55,11 +71,13 @@ function OrderDetails({ id, admin }) {
         <div className="p-5 md:p-10 sm:p-8">
           {order ? (
             <>
-              {admin && session?.admin ? (
+              {admin &&
+                session?.admin &&
+                order?.order_status?.current?.status !== "cancelled" &&
+                order?.order_status?.current?.status !== "delivered" ? (
                 <select
-                  className="border xs:text-sm text-xs p-2 rounded bg-blue-500 text-white outline-none capitalize"
-                  value={order?.order_status?.current?.status}
-                  disabled={updating}
+                  className="shadow leading-tight focus:outline-none focus:shadow-outline border xs:text-sm text-xs p-2 rounded bg-blue-500 text-white capitalize"
+                  disabled={disabled}
                   onChange={updateStatus}
                 >
                   <option value="shipping soon">Shipping soon</option>
@@ -182,6 +200,22 @@ function OrderDetails({ id, admin }) {
                     <OrderItem item={item} key={`order-item-${item?._id}`} />
                   ))}
                 </div>
+                {order?.order_status?.current?.status &&
+                  order?.order_status?.current?.status !== "cancelled" &&
+                  order?.order_status?.current?.status !== "delivered" ? (
+                  <div className="py-4">
+                    <button
+                      className={`button-red py-2 px-12 capitalize w-full sm:text-base text-sm ${disabled ? "opacity-50" : ""
+                        }`}
+                      onClick={cancelOrder}
+                      disabled={disabled}
+                    >
+                      Cancel Order
+                    </button>
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </>
           ) : (
