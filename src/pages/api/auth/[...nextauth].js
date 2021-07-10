@@ -24,7 +24,6 @@ export default NextAuth({
     },
   },
   // A database is optional, but required to persist accounts in a database
-  database:
-    "mongodb+srv://PiyushSati:uVurLWBposfAPpGU@cluster0.okarn.mongodb.net/Zinger",
+  database: `${process.env.MONGO_URI}`,
   theme: "dark",
 });
