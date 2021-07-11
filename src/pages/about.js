@@ -28,7 +28,8 @@ function About() {
               <div className="flex-grow ml-auto ">
                 <Fade bottom>
                   <p>
-                    This is Food Ordering website build using
+                    This is food ordering website for Zinger restaurant build
+                    using
                     <span className="link text-primary-light underline mx-1">
                       <Link href="https://nextjs.org/"> Next.js,</Link>
                     </span>

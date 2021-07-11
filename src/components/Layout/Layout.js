@@ -34,7 +34,7 @@ function Layout({ children, admin, auth }) {
                 <title>Zinger</title>
                 <meta
                     name="description"
-                    content="Zinger - Food Ordering website build with 💗 🔥 by Piyush Sati"
+                    content="Food ordering website for Zinger restaurant build with 💗 🔥 by Piyush Sati"
                 />
                 <link
                     rel="apple-touch-icon"
