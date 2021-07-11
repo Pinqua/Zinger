@@ -28,7 +28,7 @@ function About() {
               <div className="flex-grow ml-auto ">
                 <Fade bottom>
                   <p>
-                    This a E-commerce website build using
+                    This is Food Ordering website build using
                     <span className="link text-primary-light underline mx-1">
                       <Link href="https://nextjs.org/"> Next.js,</Link>
                     </span>
