@@ -37,7 +37,7 @@ https://zinger.vercel.app
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Pinqua/Zinger.git
 ```
 
 Go to the project directory
