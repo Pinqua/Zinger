@@ -15,7 +15,7 @@ https://zinger.vercel.app
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/V9RQgpb/zinger.png)
+![App Screenshot](https://i.ibb.co/8x3ZGnG/zinger.gif)
 
   
 ## Features
