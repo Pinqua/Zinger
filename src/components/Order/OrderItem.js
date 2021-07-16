@@ -24,7 +24,6 @@ function OrderItem({ item }) {
                     height={120}
                     alt=""
                     objectFit="contain"
-                    className="cursor-pointer"
                 />
             </div>
         </div>
