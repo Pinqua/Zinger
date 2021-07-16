@@ -5,9 +5,7 @@ function OrderItem({ item }) {
     return (
         <div className="flex sm:flex-row flex-col-reverse my-4 text-sm text-gray-700 p-6 border border-gray-200 sm:justify-between gap-6">
             <div>
-                <span className="link font-semibold capitalize">
-                    {item?.title}
-                </span>
+                <span className="font-semibold capitalize">{item?.title}</span>
                 <div className="mt-2">
                     <p>
                         <span>Quantity - </span>
