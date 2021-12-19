@@ -27,7 +27,7 @@ https://zinger.vercel.app
 - Admin Dashboard with functionalities like add product, delete product, update product, add category, view users registered, update order status and cancel order
 - State management using Redux
 - Google authentication
-- Track order status realtime
+- Track order status real time
 - Cancel order
 
 
