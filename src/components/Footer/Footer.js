@@ -65,7 +65,7 @@ function Footer({ admin }) {
                 objectFit="contain"
                 className="cursor-pointer"
                 alt="github"
-                onClick={() => router.push("https://github.com/pinqua")}
+                onClick={() => router.push("https://github.com/Pinqua")}
               />
             </div>
           </div>
@@ -73,7 +73,7 @@ function Footer({ admin }) {
         <p className="mt-6 text-gray-200 text-center flex items-center flex-wrap justify-center">
           Made with <HeartIcon className="w-5 mx-2 text-red-500" /> by
           <span className="text-white hover:underline ml-2">
-            <Link href="https://itspiyushsati.netlify.app">Piyush Sati</Link>
+            <Link href="https://itspiyushsati.vercel.app">Piyush Sati</Link>
           </span>
         </p>
       </div>
