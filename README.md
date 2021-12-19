@@ -3,7 +3,7 @@
 
 # Zinger
 
-Food ordering website for Zinger restaurant build using Next.js, TailwindCSS, Redux, Mongodb
+Food ordering website for Zinger restaurant built using Next.js, TailwindCSS, Redux, Mongodb
 
 ![Logo](https://zinger.vercel.app/_next/image?url=%2Fimg%2FZinger.svg&w=128&q=75)
 
@@ -15,14 +15,13 @@ https://zinger.vercel.app
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/V9RQgpb/zinger.png)
+![App Screenshot](https://i.ibb.co/8x3ZGnG/zinger.gif)
 
   
 ## Features
 
 - Responsive
-- Real Time
-- Dynamic
+- Real Time and Dynamic
 - Progressive Web Apps (PWA)
 - Payment Integration
 - Admin Panel with functionalities like add product, delete product, update product, add category, view users registered, update order status and cancel order
