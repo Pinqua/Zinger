@@ -21,7 +21,7 @@ https://zinger.vercel.app
 ## Features
 
 - Responsive
-- Realtime and Dynamic
+- Real Time and Dynamic
 - Progressive Web App (PWA)
 - Payment Gateway integration
 - Admin Dashboard with functionalities like add product, delete product, update product, add category, view users registered, update order status and cancel order
