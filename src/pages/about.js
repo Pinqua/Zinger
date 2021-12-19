@@ -48,7 +48,7 @@ function About() {
                         Piyush Sati
                       </Link>
                     </span>
-                    to enhance and showcase his developer skills.
+                    to enhance and showcase his development skills.
                   </p>
                   <p className="mt-2">
                     If you wanna get in touch email
