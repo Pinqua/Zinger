@@ -3,7 +3,7 @@
 
 # Zinger
 
-Food ordering website for Zinger restaurant build using Next.js, TailwindCSS, Redux, Mongodb
+Food ordering website for Zinger restaurant built using Next.js, TailwindCSS, Redux, Mongodb
 
 ![Logo](https://zinger.vercel.app/_next/image?url=%2Fimg%2FZinger.svg&w=128&q=75)
 
