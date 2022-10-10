@@ -23,11 +23,11 @@ https://zinger.vercel.app
 - Real Time and Dynamic
 - Progressive Web App (PWA)
 - Payment Gateway integration
-- Admin Panel with functionalities like add product, delete product, update product, add category, view users registered, update order status and cancel order
+-  Admin Dashboard with functionalities like adding products, deleting a product, updating products, adding a category, viewing users registered, updating order status, and canceling orders.
 - State management using Redux
 - Google authentication
 - Track order status real time
-- Cancel order
+- Cancel orders
 
 
 ## Run Locally
