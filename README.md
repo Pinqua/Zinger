@@ -69,39 +69,39 @@ Install dependencies
 Create a **.env.local** file inside project directory with fields given below.
 
 ```
-# Authentication
-GOOGLE_ID=
-GOOGLE_SECRET=
+  # Authentication
+  GOOGLE_ID=
+  GOOGLE_SECRET=
 
-# Need to add this to... google cloud
-# http://localhost:3000/api/auth/callback/google
-
-
-NEXTAUTH_URL=http://localhost:3000
+  # Need to add this to... google cloud
+  # http://localhost:3000/api/auth/callback/google
 
 
-HOST=http://localhost:3000
+  NEXTAUTH_URL=http://localhost:3000
 
 
-# Stripe
-STRIPE_PUBLIC_KEY=
-STRIPE_SECRET_KEY=
+  HOST=http://localhost:3000
 
 
-# Stripe Terminal/CLI
-STRIPE_SIGNING_SECRET=
-
-# Testing Webhook
-# stripe listen --forward-to localhost:3000/api/webhook
+  # Stripe
+  STRIPE_PUBLIC_KEY=
+  STRIPE_SECRET_KEY=
 
 
-# Mongodb Database
-# Use mongodb connection url with driver node.js and version 2.2.12 or later
-MONGODB_URI=
-# Your database name
-MONGODB_DB=
-# Add monogdb connection url 
-MONGO_URI=
+  # Stripe Terminal/CLI
+  STRIPE_SIGNING_SECRET=
+
+  # Testing Webhook
+  # stripe listen --forward-to localhost:3000/api/webhook
+
+
+  # Mongodb Database
+  # Use mongodb connection url with driver node.js and version 2.2.12 or later
+  MONGODB_URI=
+  # Your database name
+  MONGODB_DB=
+  # Add monogdb connection url 
+  MONGO_URI=
 ```
 
 Start the server
@@ -116,10 +116,10 @@ Start the server
 Test Stripe payment gateway with these card details.
 
 ```
-BRAND - VISA
-CARD NUMBER - 4242424242424242
-CVC - Any 3 digits
-DATE - Any future date
+  BRAND - VISA
+  CARD NUMBER - 4242424242424242
+  CVC - Any 3 digits
+  DATE - Any future date
 ```
 
 See details: https://stripe.com/docs/testing
