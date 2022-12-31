@@ -68,7 +68,7 @@ Install dependencies
 
 Create a **.env.local** file inside project directory with fields given below.
 
-```
+```bash
   # Authentication
   GOOGLE_ID=
   GOOGLE_SECRET=
