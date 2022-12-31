@@ -56,7 +56,21 @@ Start the server
   npm run dev
 ```
 
+
+## Stripe Payment Gateway
+
+Test Stripe payment gateway with these card details.
+
+```
+BRAND - VISA
+CARD NUMBER - 4242424242424242
+CVC - Any 3 digits
+DATE - Any future date
+```
+
+See details: https://stripe.com/docs/testing
   
+
 ## Contributing
 
 Contributions are always welcome!
