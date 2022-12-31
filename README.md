@@ -22,7 +22,9 @@ Food ordering website for Zinger restaurant built using Next.js, TailwindCSS, Re
 
 ![Logo](https://zinger.vercel.app/_next/image?url=%2Fimg%2FZinger.svg&w=128&q=75)
 
-![Icon](https://zinger.vercel.app/img/favicons/apple-touch-icon.png)
+<img src="https://zinger.vercel.app/img/favicons/apple-touch-icon.png" height="100" alt="" />
+
+
 ## Demo
 
 https://zinger.vercel.app
