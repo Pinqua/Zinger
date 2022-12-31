@@ -50,6 +50,44 @@ Install dependencies
   npm install
 ```
 
+Create a **.env.local** file inside project directory with fields given below.
+
+```
+# Authentication
+GOOGLE_ID=
+GOOGLE_SECRET=
+
+# Need to add this to... google cloud
+# http://localhost:3000/api/auth/callback/google
+
+
+NEXTAUTH_URL=http://localhost:3000
+
+
+HOST=http://localhost:3000
+
+
+# Stripe
+STRIPE_PUBLIC_KEY=
+STRIPE_SECRET_KEY=
+
+
+# Stripe Terminal/CLI
+STRIPE_SIGNING_SECRET=
+
+# Testing Webhook
+# stripe listen --forward-to localhost:3000/api/webhook
+
+
+# Mongodb Database
+# Use mongodb connection url with driver node.js and version 2.2.12 or later
+MONGODB_URI=
+# Your database name
+MONGODB_DB=
+# Add monogdb connection url 
+MONGO_URI=
+```
+
 Start the server
 
 ```bash
@@ -80,4 +118,8 @@ Contributions are always welcome!
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+<br/>
+<br/>
+
+<p align="center">If you liked the repository, show your  ❤️  by starring and forking it.</p>
   
