@@ -113,11 +113,12 @@ Start the server
 ```bash
   npm run dev
 ```
-
-## Admin Access 
+ 
+Admin Access 
 
 ```
- To gain admin access, you need to add your email ID to the admin collection in MongoDB. After adding it, try logging in with the same email ID, and you should see the dashboard option.  
+ To gain admin access, you need to add your email ID to the admin collection in MongoDB.
+ After adding it, try logging in with the same email ID, and you should see the dashboard option.  
 ```
 
 
