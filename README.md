@@ -98,18 +98,26 @@ Create a **.env.local** file inside project directory with fields given below.
 
 
   # Mongodb Database
-  # Use mongodb connection url with driver node.js and version 2.2.12 or later
-  MONGODB_URI=
+  
   # Your database name
   MONGODB_DB=
   # Add monogdb connection url 
   MONGO_URI=
+  # Add mongodb connection url but with driver node.js and version 2.2.12 or later 
+  MONGODB_URI=
+  
 ```
 
 Start the server
 
 ```bash
   npm run dev
+```
+
+## Admin Access 
+
+```
+ To gain admin access, you need to add your email ID to the admin collection in MongoDB. After adding it, try logging in with the same email ID, and you should see the dashboard option.  
 ```
 
 
